@@ -74,16 +74,19 @@ const setPhase = (phase) => {
             let poemInfo = document.createElement('p')
             let myLetter = document.createElement('p')
             let audio = document.createElement('audio')
+            let topPhoto = document.createElement('img')
             content.removeChild(content.children[0])
             content.removeChild(content.children[0])
             content.removeChild(content.children[0])
             myLetter.innerText = letter
             poemInfo.innerText = 'пісня: ' + poem.author + ' - ' + poem.poem
+            topPhoto.src = './media/menkatrin.jpg'
             audio.src = poem.path
             console.log(audio.baseURI);
             audio.onerror = e => alert(e.srcElement.error.message);
             audio.autoplay = true
             content.append(myLetter)
+            content.append(topPhoto)
             content.append(poemInfo)
             content.append(audio);
             
